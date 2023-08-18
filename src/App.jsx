@@ -2,11 +2,15 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [email, setEmail] = useState("")
+  const [senha, setSenha] = useState("")
 
+  function handleEmail(evento){
+    console.log(evento)
+  }
 
   return (
     <>
-
       <header>
         <h1>Login</h1>
       </header>
@@ -16,7 +20,7 @@ function App() {
 
           <div>
             <label htmlFor="email">Email: </label>
-            <input type="email" id='email' placeholder='Digite seu email'/>
+            <input type="email" id='email' placeholder='Digite seu email' onChange={handleEmail}/>
           </div>
 
           <div>
