@@ -6,7 +6,16 @@ function App() {
   const [senha, setSenha] = useState("")
 
   function handleEmail(evento){
-    console.log(evento)
+    setEmail(evento.target.value)
+  }
+  function handleSenha(evento){
+    setSenha(evento.target.value)
+  }
+  function handleSubmit(){
+    alert(`
+      Email: ${email}
+      Senha: ${senha}
+    `)
   }
 
   return (
@@ -16,7 +25,7 @@ function App() {
       </header>
 
       <main>
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
 
           <div>
             <label htmlFor="email">Email: </label>
@@ -25,8 +34,10 @@ function App() {
 
           <div>
             <label htmlFor="password">Senha: </label>
-            <input type="password" id='senha' placeholder='Digite sua senha' />
+            <input type="password" id='senha' placeholder='Digite sua senha' onChange={handleSenha}/>
           </div>
+
+          <button>Enviar</button>
 
         </form>
 
